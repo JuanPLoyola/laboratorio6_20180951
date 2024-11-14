@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_users_enabled"
+        android:title="Usuarios habilitados"
+        android:icon="@drawable/logo" />
+
+    <item
+        android:id="@+id/nav_users_banned"
+        android:title="Usuarios baneados"
+        android:icon="@drawable/logo" />
+
+    <item
+        android:id="@+id/nav_logout"
+        android:title="Cerrar sesión"
+        android:icon="@drawable/logo" />
+</menu>

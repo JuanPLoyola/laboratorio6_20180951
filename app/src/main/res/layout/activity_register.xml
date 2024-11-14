@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Logo de la aplicación -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"
+            android:layout_gravity="center_horizontal" />
+
+        <!-- Campo de entrada para el correo electrónico -->
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo electrónico"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="24dp" />
+
+        <!-- Campo de entrada para la contraseña -->
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:layout_marginTop="16dp" />
+
+        <!-- Botón de Registro -->
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrarse"
+            android:layout_marginTop="24dp" />
+
+        <!-- Enlace para regresar a inicio de sesión -->
+        <TextView
+            android:id="@+id/loginTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Ya tienes una cuenta? Inicia sesión"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
