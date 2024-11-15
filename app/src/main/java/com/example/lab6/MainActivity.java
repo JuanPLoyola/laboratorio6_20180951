@@ -1,11 +1,13 @@
 package com.example.lab6;
 
-import android.content.Intent;
+
 import android.os.Bundle;
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import androidx.fragment.app.Fragment;
+
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -13,20 +15,36 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView navigation = findViewById(R.id.bottomNavigationView);
-        navigation.setOnNavigationItemSelectedListener(item -> {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            Fragment selectedFragment = null;
             int itemId = item.getItemId();
+
             if (itemId == R.id.nav_users_enabled) {
-                // Cargar fragmento de usuarios habilitados
+                selectedFragment = new UsuariosFragment(true); // Muestra usuarios habilitados
             } else if (itemId == R.id.nav_users_banned) {
-                // Cargar fragmento de usuarios baneados
+                selectedFragment = new UsuariosFragment(false); // Muestra usuarios baneados
             } else if (itemId == R.id.nav_logout) {
+                // Cerrar sesión
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                finish();
+                finish(); // Terminar MainActivity y regresar a Login
+                return true;
             }
+
+            if (selectedFragment != null) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragmentContainer, selectedFragment)
+                        .commit();
+            }
+
             return true;
         });
 
+        // Cargar el fragmento de usuarios habilitados por defecto
+        if (savedInstanceState == null) {
+            bottomNavigationView.setSelectedItemId(R.id.nav_users_enabled);
+        }
     }
 }
+
+

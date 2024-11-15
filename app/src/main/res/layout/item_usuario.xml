@@ -1,0 +1,62 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/fotoImageView"
+        android:layout_width="103dp"
+        android:layout_height="121dp"
+        android:src="@drawable/logo" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="127dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="8dp">
+
+        <TextView
+            android:id="@+id/nombreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apellido, Nombre"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/correoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correo" />
+
+        <TextView
+            android:id="@+id/dniTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DNI" />
+
+        <TextView
+            android:id="@+id/codigoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Código" />
+
+
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/editarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit"
+        android:contentDescription="Editar usuario" />
+
+    <ImageButton
+        android:id="@+id/eliminarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_delete"
+        android:contentDescription="Eliminar usuario" />
+
+</LinearLayout>
